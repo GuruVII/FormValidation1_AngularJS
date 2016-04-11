@@ -1,0 +1,415 @@
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Freelancer</title>
+    
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>body{padding-top:50px;}.starter-template{padding:40px 15px;text-align:center;}</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/module.js"></script>
+    </head>
+
+    
+    
+    
+    
+    
+    
+<body ng-app="app">
+    <div class="col-xs-8" ng-controller="formController">
+    
+        <div class="row" >
+            <div class="form-group col-sm-5 col-xs-12">
+                <div class="col-xs-12">
+                    <label for="query">What is your querry?</label>
+                </div> 
+                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-11">
+                    <select ng-options="item.name for item in selectedTopicArray" ng-model="selectedQuery" style="margin-left:15px;" class="form-control"></select>
+                </div>
+            </div>
+           
+        </div>
+        
+        <form role="form" name="formWebpageQuery" ng-if = "selectedQuery.id == 1" novalidate>
+            
+        <div class="row">
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label class="label-font" for="name">Name:</label>
+                </div>
+                    <div class="col-xs-12 ">
+                        <div class="col-xs-11">
+                            <input type="text" name="name" class="form-control"  placeholder="insert your name" ng-model="name" ng-required="true" ng-minlength="2" ng-trim=”true”>
+                        </div>
+                        <div class="col-xs-1 top-margin-10px">
+                            <span ng-if="formWebpageQuery.name.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                            <span ng-if="formWebpageQuery.name.$invalid && formWebpageQuery.name.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>        
+                            
+                        </div>
+                        <div class="col-xs-12">
+                            <span ng-if="formWebpageQuery.name.$invalid && formWebpageQuery.name.$dirty "></span>
+                            <span ng-if="formWebpageQuery.name.$error.minlength && formWebpageQuery.name.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                            <span ng-if="formWebpageQuery.name.$error.required && formWebpageQuery.name.$dirty" class="glyph-remove-color">This field is required</span>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label for="surname">Surname:</label>
+                </div>
+                <div class="col-xs-12 ">
+                    <div class="col-xs-11">
+                        <input type="text" name="surname" ng-model="surname" ng-required="true" ng-minlength="2" ng-trim="true" class="form-control" placeholder="insert your surname">
+                    </div>
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formWebpageQuery.surname.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formWebpageQuery.surname.$invalid && formWebpageQuery.surname.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>        
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formWebpageQuery.surname.$invalid && formWebpageQuery.surname.$dirty "></span>
+                        <span ng-if="formWebpageQuery.surname.$error.minlength && formWebpageQuery.surname.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                        <span ng-if="formWebpageQuery.surname.$error.required && formWebpageQuery.surname.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label for="address">Address:</label>
+                </div> 
+                <div class="col-xs-12 ">
+                    <div class="col-xs-11">
+                        <input type="text" name="address" ng-model="address" class="form-control" ng-required="true" ng-minlength="2" ng-trim="true" class="form-control"  placeholder="insert your address">
+                     </div>
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formWebpageQuery.address.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formWebpageQuery.address.$invalid && formWebpageQuery.address.$dirty "class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formWebpageQuery.address.$invalid && formWebpageQuery.address.$dirty "></span>
+                        <span ng-if="formWebpageQuery.address.$error.minlength && formWebpageQuery.address.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                        <span ng-if="formWebpageQuery.address.$error.required && formWebpageQuery.address.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label for="address">Zip Code:</label>
+                </div> 
+                <div class="col-xs-12 ">
+                    <div class="col-xs-11">
+                        <input type="text" name="zipcode" ng-model="zipcode" class="form-control" placeholder="Insert your Zip Code" ng-required="true" ng-trim="true" class="form-control">
+                    </div>
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formWebpageQuery.zipcode.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formWebpageQuery.zipcode.$invalid && formWebpageQuery.zipcode.$dirty "class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formWebpageQuery.zipcode.$invalid && formWebpageQuery.zipcode.$dirty"></span>
+                        <span ng-if="formWebpageQuery.zipcode.$error.minlength && formWebpageQuery.zipcode.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                        <span ng-if="formWebpageQuery.zipcode.$error.required && formWebpageQuery.zipcode.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-5 col-xs-12">
+                <div class="col-xs-12">
+                    <label for="country">Country:</label>
+                </div> 
+                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-11">
+                    <select name="country" ng-options="item for item in countryListArray" ng-model="countryList" ng-required="true" style="margin-left:15px;" class="form-control"></select>
+                </div>
+                 <div class="col-xs-1">
+                        <span ng-if="formWebpageQuery.country.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formWebpageQuery.country.$invalid" class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                </div>
+            </div>
+        </div>
+            
+        
+        <div class="row">
+            <div class="form-group col-xs-11 col-sm-5">
+                <div class="col-xs-12 ">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-xs-12 ">
+                     <div class="col-xs-11">
+                        <input type="text" name="email" class="form-control" ng-model="email" placeholder="example@example.com" ng-required="true" ng-trim="true" ng-pattern="/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/">
+                    </div>
+                
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formWebpageQuery.email.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formWebpageQuery.email.$invalid && formWebpageQuery.email.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formWebpageQuery.email.$error.pattern" class="glyph-remove-color">Please input a valid email address</span>
+                        <span ng-if="formWebpageQuery.email.$error.required && formWebpageQuery.email.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="form-group" class="col-xs-11 col-sm-8" style="margin-left:15px;">
+                <div class="col-xs-12 ">
+                    <label for="email">Basic project description:</label>
+                </div>
+                <textarea rows="4" cols="50" style="border-radius:3px; margin-left:25px;"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-xs-3 col-sm-offset-4">
+                    <button type="submit" class="btn btn-primary" ng-class="{'disabled' : formWebpageQuery.$invalid}">Submit</button>
+            </div>
+        </div>
+            
+    </form>
+        
+        <form role="form" name="formAngularJSQuery" ng-if = "selectedQuery.id == 2" novalidate>
+            
+        <div class="row">
+            
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label for="surname">Module description:</label>
+                </div>
+                <div class="col-xs-12 ">
+                    <div class="col-xs-11">
+                        <input type="text" name="module" ng-model="module" ng-required="true" ng-minlength="10" ng-trim="true" class="form-control" placeholder="Module description">
+                    </div>
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formAngularJSQuery.module.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formAngularJSQuery.module.$invalid && formAngularJSQuery.module.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>        
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formAngularJSQuery.module.$invalid && formAngularJSQuery.module.$dirty "></span>
+                        <span ng-if="formAngularJSQuery.module.$error.minlength && formAngularJSQuery.module.$dirty" class="glyph-remove-color">A minimum of 10 characters is required</span>
+                        <span ng-if="formAngularJSQuery.module.$error.required && formAngularJSQuery.module.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label class="label-font" for="name">Name:</label>
+                </div>
+                    <div class="col-xs-12 ">
+                        <div class="col-xs-11">
+                            <input type="text" name="name" class="form-control"  placeholder="insert your name" ng-model="name" ng-required="true" ng-minlength="2" ng-trim=”true”>
+                        </div>
+                        <div class="col-xs-1 top-margin-10px">
+                            <span ng-if="formAngularJSQuery.name.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                            <span ng-if="formAngularJSQuery.name.$invalid && formAngularJSQuery.surname.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>        
+                            
+                        </div>
+                        <div class="col-xs-12">
+                            <span ng-if="formAngularJSQuery.name.$invalid && formAngularJSQuery.name.$dirty "></span>
+                            <span ng-if="formAngularJSQuery.name.$error.minlength && formAngularJSQuery.name.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                            <span ng-if="formAngularJSQuery.name.$error.required && formAngularJSQuery.name.$dirty" class="glyph-remove-color">This field is required</span>
+                        </div>
+                    </div>
+            </div>
+
+
+        </div>
+            
+        <div class="row">
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label for="address">Address:</label>
+                </div> 
+                <div class="col-xs-12 ">
+                    <div class="col-xs-11">
+                        <input type="text" name="address" ng-model="address" class="form-control" ng-required="true" ng-minlength="2" ng-trim="true" class="form-control"  placeholder="insert your address">
+                     </div>
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formAngularJSQuery.address.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formAngularJSQuery.address.$invalid && formAngularJSQuery.address.$dirty "class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formAngularJSQuery.address.$invalid && formAngularJSQuery.address.$dirty "></span>
+                        <span ng-if="formAngularJSQuery.address.$error.minlength && formAngularJSQuery.address.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                        <span ng-if="formAngularJSQuery.address.$error.required && formAngularJSQuery.address.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-xs-11 col-sm-5">
+                <div class="col-xs-12 ">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-xs-12 ">
+                     <div class="col-xs-11">
+                        <input type="text" name="email" class="form-control" ng-model="email" placeholder="Insert your Email address" ng-required="true" ng-trim="true" ng-pattern="/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/">
+                    </div>
+                
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formAngularJSQuery.email.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formAngularJSQuery.email.$invalid && formAngularJSQuery.email.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formAngularJSQuery.email.$invalid && formAngularJSQuery.email.$dirty" class="glyph-remove-color">Please input a valid email address</span>
+                        <span ng-if="formAngularJSQuery.email.$error.required && formAngularJSQuery.email.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+                <div class="col-xs-3 col-sm-offset-4">
+                    <button type="submit" class="btn btn-primary" ng-class="{'disabled' : formAngularJSQuery.$invalid}">Submit</button>
+            </div>
+        </div>
+            
+    </form>
+        
+        <form role="form" name="formConsultQuery" ng-if = "selectedQuery.id == 3" novalidate>
+            
+        <div class="row">
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label class="label-font" for="name">Company Name:</label>
+                </div>
+                    <div class="col-xs-12 ">
+                        <div class="col-xs-11">
+                            <input type="text" name="companyName" class="form-control"  placeholder="insert your name" ng-model="companyName" ng-required="true" ng-minlength="2" ng-trim=”true”>
+                        </div>
+                        <div class="col-xs-1 top-margin-10px">
+                            <span ng-if="formConsultQuery.companyName.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                            <span ng-if="formConsultQuery.companyName.$invalid && formConsultQuery.companyName.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>        
+                            
+                        </div>
+                        <div class="col-xs-12">
+                            <span ng-if="formConsultQuery.companyName.$invalid && formConsultQuery.companyName.$dirty "></span>
+                            <span ng-if="formConsultQuery.companyName.$error.minlength && formConsultQuery.companyName.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                            <span ng-if="formConsultQuery.companyName.$error.required && formConsultQuery.companyName.$dirty" class="glyph-remove-color">This field is required</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="form-group col-sm-8 col-xs-11">
+                <div class="col-xs-12 ">
+                    <label for="address">Address:</label>
+                </div> 
+                <div class="col-xs-12 ">
+                    <div class="col-xs-11">
+                        <input type="text" name="address" ng-model="address" class="form-control" ng-required="true" ng-minlength="2" ng-trim="true" class="form-control"  placeholder="insert your address">
+                     </div>
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formConsultQuery.address.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formConsultQuery.address.$invalid && formConsultQuery.address.$dirty "class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formConsultQuery.address.$invalid && formConsultQuery.address.$dirty "></span>
+                        <span ng-if="formConsultQuery.address.$error.minlength && formConsultQuery.address.$dirty" class="glyph-remove-color">A minimum of 2 characters is required</span>
+                        <span ng-if="formConsultQuery.address.$error.required && formConsultQuery.address.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-xs-11 col-sm-5">
+                <div class="col-xs-12 ">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-xs-12 ">
+                     <div class="col-xs-11">
+                        <input type="text" name="email" class="form-control" ng-model="email" placeholder="Insert your Email address" ng-required="true" ng-trim="true" ng-pattern="/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/">
+                    </div>
+                
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formConsultQuery.email.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formConsultQuery.email.$invalid && formConsultQuery.email.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formConsultQuery.email.$invalid && formConsultQuery.email.$dirty" class="glyph-remove-color">Please input a valid email address</span>
+                        <span ng-if="formConsultQuery.email.$error.required && formConsultQuery.email.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="form-group col-xs-11 col-sm-5">
+                <div class="col-xs-12 ">
+                    <label for="email">Phone number:</label>
+                </div>
+                <div class="col-xs-12 ">
+                     <div class="col-xs-11">
+                        <input type="text" name="phone" class="form-control" ng-model="phone" placeholder="Insert yourphone number" ng-required="true" ng-trim="true">
+                    </div>
+                
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formConsultQuery.phone.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formConsultQuery.phone.$invalid && formConsultQuery.phone.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formConsultQuery.phone.$error.required && formConsultQuery.phone.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="form-group col-xs-11 col-sm-5">
+                <div class="col-xs-12 ">
+                    <label for="email">Requested consultation date:</label>
+                </div>
+                <div class="col-xs-12 ">
+                     <div class="col-xs-11">
+                        <input type="text" name="date" class="form-control" ng-model="date" placeholder="dd/mm/yyyy" ng-required="true" ng-trim="true" ng-pattern="/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/">
+                    </div>
+                
+                    <div class="col-xs-1 top-margin-10px">
+                        <span ng-if="formConsultQuery.date.$valid" class="glyphicon glyphicon-ok glyph-ok-color"></span>
+                        <span ng-if="formConsultQuery.date.$invalid && formConsultQuery.date.$dirty" class="glyphicon glyphicon-remove glyph-remove-color"></span>
+                    </div>
+                    <div class="col-xs-12">
+                        <span ng-if="formConsultQuery.date.$error.pattern" class="glyph-remove-color">The date is not in a proper format (dd/mm/yyyy)</span>
+                        <span ng-if="formConsultQuery.date.$error.required && formConsultQuery.date.$dirty" class="glyph-remove-color">This field is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
+
+        <div class="row">
+                <div class="col-xs-3 col-sm-offset-4">
+                    <button type="submit" class="btn btn-primary" ng-class="{'disabled' : formConsultQuery.$invalid}">Submit</button>
+            </div>
+        </div>
+            
+    </form>
+    </div>
+    
+    
+
+
+</body>
